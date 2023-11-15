@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>#{gestaoUsuariosBean.message}</title>
+
+    <h:outputStylesheet library="utils" name="estilo.css" />
+
+</h:head>
+
+<h:body style="text-align: center;">
+    <header style="text-align: center;">
+        <h:graphicImage library="utils" name="logo1.jpg"  />
+    </header>
+
+    <h:form id="returnForm" style="margin-bottom: 20px;">
+        <p:commandButton value="Retornar ao início"
+                         action="#{gestaoUsuariosBean.navigateIndex}" ajax="false" />
+    </h:form>
+
+    <h:form id="usuarioForm" style="display: inline-block; text-align: left;">
+        <p:panelGrid id="panel" columns="3" border="3" cellpadding="5"
+                     cellspacing="1">
+            <f:facet name="header">
+                <h:outputText value="Criar usuário" />
+            </f:facet>
+
+            <p:outputLabel value="Nome:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.nome}" id="nome"
+                         maxlength="100" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="nome" />
+
+            <p:outputLabel value="E-mail:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.email}" id="email"
+                         maxlength="100" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="email" />
+
+            <p:outputLabel value="CPF:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.CPF}" id="cpf"
+                         maxlength="11" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="cpf" />
+
+            <p:outputLabel value="Rua:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.endereco.rua}" id="rua"
+                         maxlength="100" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="rua" />
+
+            <p:outputLabel value="Número:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.endereco.numero}" id="numero" required="true"
+                         requiredMessage="Campo obrigatório" maxlength="10">
+                <f:convertNumber integerOnly="true" type="number" />
+            </p:inputText>
+            <p:message for="numero" />
+
+            <p:outputLabel value="Cidade:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.endereco.cidade}" id="cidade"
+                         maxlength="100" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="cidade" />
+
+            <p:outputLabel value="UF:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.endereco.UF}" id="uf"
+                         maxlength="2" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="uf" />
+
+            <p:outputLabel value="Complemento:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.endereco.complemento}" id="complemento"
+                         maxlength="100" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="complemento" />
+
+            <p:outputLabel value="CEP:" />
+            <p:inputText value="#{gestaoUsuariosBean.usuario.endereco.CEP}" id="cep"
+                         maxlength="8" required="true" requiredMessage="Campo obrigatório" />
+            <p:message for="cep" />
+
+            <f:facet name="footer">
+                <p:commandButton value="Salvar" action="#{gestaoUsuariosBean.salvar}"
+                                 update="usuarioForm" style="margin-left: auto; margin-right: auto; display: block;"
+                                 />
+            </f:facet>
+        </p:panelGrid>
+    </h:form>
+
+</h:body>
+</html>
