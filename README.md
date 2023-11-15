@@ -1,4 +1,4 @@
-# point-sistemas-desafio
+# Projeto JSF com PrimeFaces
 
 Usei o IntelliJ como IDE.
 
