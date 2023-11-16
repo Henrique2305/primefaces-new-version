@@ -45,13 +45,6 @@ public class GestaoUsuariosBean implements Serializable {
         cadastroUsuarioService.excluir(usuario);
     }
 
-    public void editar() {
-//        Usuario usuario1 = UsuarioConverter.transformBOModelForUpdate(usuario, usuarios.porId(usuario.getId()));
-        cadastroUsuarioService.salvar(usuario);
-        FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Usuário editado com sucesso"));;
-    }
-
     public void resetUsuario() {
         this.usuario = new Usuario(new Endereco());
     }
