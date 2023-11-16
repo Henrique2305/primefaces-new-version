@@ -7,7 +7,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-    <title>#{gestaoUsuariosBean.message}</title>
+    <title>Cadastro</title>
 
     <h:outputStylesheet library="utils" name="estilo.css" />
 </h:head>
@@ -27,6 +27,7 @@
             <f:facet name="left">
 
                 <p:commandButton value="Nova" icon="fa fa-plus"
+                                 actionListener="#{gestaoUsuariosBean.resetUsuario}"
                                  oncomplete="PF('usuarioDialogWidgetVar').show()"
                                  update=":usuarioForm:usuarioDialog" process="@this">
                     <p:resetInput target=":usuarioForm:usuarioDialog" />
@@ -73,7 +74,8 @@
 
             <p:column>
                 <p:commandButton value="Excluir" action="#{gestaoUsuariosBean.excluir(user)}"
-                                 update=":usuarioForm:formDialog" oncomplete="PF('dialog').show();" />
+                                 update=":usuarioForm:formDialog" oncomplete="PF('dialog').show();"
+                                 process="@this"/>
             </p:column>
 
             <p:column>
@@ -140,7 +142,7 @@
                 <p:inputText value="#{gestaoUsuariosBean.usuario.endereco.CEP}" id="cep"
                              maxlength="8" required="true" requiredMessage="Campo obrigatório"  />
 
-                <p:commandButton id="salvarCommandButton" value="Salvar" actionListener="#{gestaoUsuariosBean.editar}"
+                <p:commandButton id="salvarCommandButton" value="Salvar" actionListener="#{gestaoUsuariosBean.salvar}"
                                  update="usuarioPanelGrid usuarioMessages"
                                  oncomplete="if (!args.validationFailed) { PF('usuarioDialogWidgetVar').hide(); location.reload(); }"
                                  process="usuarioDialog"

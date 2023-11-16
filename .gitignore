@@ -1,0 +1,25 @@
+# IntelliJ IDEA
+.idea/
+
+# Arquivos de configuração do IntelliJ
+*.iml
+*.ipr
+*.iws
+
+# Diretórios de compilação
+out/
+target/
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos de compilação Java
+*.class
+
+# Dependências do Maven
+/.mvn/
+/maven/

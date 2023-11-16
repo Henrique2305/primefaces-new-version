@@ -25,17 +25,6 @@ public class Usuarios implements Serializable {
 	public Usuario porId(Long id) {
 		return manager.find(Usuario.class, id);
 	}
-
-//	public List<Usuario> pesquisar(String nome) {
-//		String jpql = "from Usuario where razaoSocial like :razaoSocial";
-//
-//		TypedQuery<Usuario> query = manager
-//				.createQuery(jpql, Usuario.class);
-//
-//		query.setParameter("razaoSocial", nome + "%");
-//
-//		return query.getResultList();
-//	}
 	
 	public List<Usuario> todas() {
          return manager.createQuery("from Usuario", Usuario.class).getResultList();
