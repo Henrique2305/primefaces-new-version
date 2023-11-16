@@ -1,25 +1,33 @@
-# IntelliJ IDEA
-.idea/
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Arquivos de configuração do IntelliJ
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
 *.ipr
-*.iws
 
-# Diretórios de compilação
-out/
-target/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Arquivos de log
-*.log
-
-# Arquivos temporários
-*.tmp
-*.temp
-
-# Arquivos de compilação Java
-*.class
-
-# Dependências do Maven
-/.mvn/
-/maven/
+### VS Code ###
+.vscode/
